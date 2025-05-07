@@ -1,11 +1,20 @@
 # kub-action-01-starting-setup
 
 ## Checkout dashboard:
+```
 minikube dashboard
+```
 
 ## Built and pushed the image to dockerhub amirjfr/kub-first-app
 
+```
+docker build -t kube-first-app .
+docker tag kube-first-app amirjfr/kube-first-app
+docker push amirjfr/kube-first-app
+```
 
+
+## Create deployment:
 ```
 kubectl create deployment first-app --image=amirjfr/kub-first-app
 kubectl get deployments
@@ -21,4 +30,19 @@ minikube service first-app
 kubectl create deployment first-app --name=kamirjfr/ube-first-app
 kubectl expose deployment first-app --type=LoadBalancer --port=8080
 kubectl scale deplyment/first-app replicas=3
+```
+
+### updating image:
+```
+docker build . -t kube-first-app
+docker tag kube-first-app amirjfr/kube-first-app:2
+docker push amirjfr/kube-first-app:2
+kubectl set image deployment/first-app kube-first-app=amirjfr/kube-first-app:2
+kubectl rollout status deployment/first-app
+```
+
+
+### to run:
+```
+minikube service first-app
 ```
