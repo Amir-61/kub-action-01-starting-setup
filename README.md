@@ -41,6 +41,15 @@ kubectl set image deployment/first-app kube-first-app=amirjfr/kube-first-app:2
 kubectl rollout status deployment/first-app
 ```
 
+### undo previous deployments
+```
+kubectl rollout undeo deployment/first-app
+OR
+kubectl rollout history deployment/first-app 
+kubectl rollout history deployment/first-app --to-revision=1
+kubectl rollout status deployment/first-app
+```
+
 
 ### to run:
 ```
