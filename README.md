@@ -13,3 +13,12 @@ kubectl get pods
 kubectl expose deployment first-app --type=LoadBalancer --port=8080
 minikube service first-app
 ```
+### Healing:
+- So if we hit domain/error it crashes and it auto heals
+
+### replics:
+```
+kubectl create deployment first-app --name=kamirjfr/ube-first-app
+kubectl expose deployment first-app --type=LoadBalancer --port=8080
+kubectl scale deplyment/first-app replicas=3
+```
