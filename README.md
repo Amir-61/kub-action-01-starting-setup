@@ -55,3 +55,11 @@ kubectl rollout status deployment/first-app
 ```
 minikube service first-app
 ```
+
+
+## Using declarative deployment:
+
+### run deployment file:
+```
+kubectl apply -f=deployment.yaml
+```
