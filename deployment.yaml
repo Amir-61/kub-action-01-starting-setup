@@ -7,6 +7,8 @@ spec:
   selector:
     matchLabels:
       app: my-app
+    # matchExpressions:
+    #   - {key: app, operator: In, values:[second-app, backend]}
   template:
     metadata:
       labels:
