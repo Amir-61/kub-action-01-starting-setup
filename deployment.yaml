@@ -18,5 +18,11 @@ spec:
       containers:
         - name: my-node-container
           image: amirjfr/kube-first-app
+          livenessProbe:
+            httpGet:
+              path: / # this is by default; you cna change it
+              port: 8080
+            periodSeconds: 10
+            initialDelaySeconds: 5
         # - name: ...
         #   image:
