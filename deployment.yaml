@@ -18,6 +18,7 @@ spec:
       containers:
         - name: my-node-container
           image: amirjfr/kube-first-app
+          imagePullPolicy: Always
           livenessProbe:
             httpGet:
               path: / # this is by default; you cna change it
